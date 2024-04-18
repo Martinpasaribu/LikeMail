@@ -33,11 +33,10 @@ app.use("/api/messages", messageRoutes);
 app.use("/api/users", userRoutes);
 
 // add
-app.use(express.static(path.join(__dirname,'/client/dist')))
 
-app.get("*", (req, res) => {
-	res.sendFile(path.join(__dirname, "client", "dist", "index.html"));
-});
+app.use('/', (req,res)=> {
+    res.send(" Server Untuk Like Mail Berjalan dengan Baik ")
+})
 
 
 
